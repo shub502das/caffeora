@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CAFFÉORA — Coffee for better mornings</title>
+  <link rel="icon" href="images/favicon.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom_style.css">
+</head>
+
+<body>
+  <div id="pre">
+    <div class="b">CAFFÉORA</div>
+    <div class="track">
+      <div class="fill" id="pre-fill" style="width: 0%;"></div>
+    </div>
+    <div class="pct" id="pre-pct">WARMING THE WATER · 0%</div>
+  </div>
+
+  <div id="stage">
+    <video class="brew-vid" id="brew" muted="" playsinline="" loop="" preload="auto" crossorigin="anonymous"
+      aria-label="Tea brewing">
+      <source src="images/brew.mp4" type="video/mp4">
+      </source>
+    </video>
+    <canvas class="fx" id="fx" width="1920" height="1080"></canvas>
+  </div>
+  <div class="warm" id="warm"></div>
+  <div class="scrim"></div>
+
+  <div class="progress" id="progress"></div>
+  <div class="hud">
+    <div class="l" id="hud-label">THE RITUAL</div>
+    <div class="n">CAFFÉORA</div>
+  </div>
+
+  <nav id="nav">
+    <div class="shell navbar">
+      <a href="#top" class="brand">CAFFÉORA</a>
+      <div class="navlinks">
+        <a href="#s2">Ingredients</a>
+        <a href="#s4">The Brew</a>
+        <a href="#s6">The Pour</a>
+        <a href="#s7">Order</a>
+      </div>
+      <a href="#s7" class="nav-cta">Order now</a>
+    </div>
+  </nav>
+  <header class="site-header" id="siteHeader" style="display: none;">
+    <div class="container-fluid container-xxl d-flex align-items-center justify-content-between">
+      <a class="brand" href="#">CAFFÉORA</a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#story">Story</a>
+        <a href="#coffee">Coffee</a>
+        <a href="#brew-guide">Brew Guide</a>
+        <a href="#journal">Journal</a>
+        <a href="#footer">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn d-none d-md-grid" aria-label="Search"><i class="bi bi-search"></i></button>
+        <button class="cart-btn" aria-label="Shopping bag"><i class="bi bi-bag"></i><span
+            id="cartCount">0</span></button>
+        <button class="menu-btn d-lg-none" id="menuBtn" aria-label="Open menu"
+          aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#story">Story</a><a href="#coffee">Coffee</a><a href="#brew-guide">Brew Guide</a><a
+        href="#journal">Journal</a><a href="#footer">Contact</a>
+    </div>
+  </header>
+
+  <!-- EXISTING HERO INTEGRATION NOTE:
+       Replace this demo hero block with the user's current hero markup if merging into the existing website.
+       All sections below #main are designed to begin immediately after the current hero. -->
+  <section class="demo-hero" aria-label="Coffee introduction" style="display: none;">
+    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=2000&q=88"
+      alt="Fresh coffee in a ceramic cup" fetchpriority="high">
+    <div class="demo-hero-overlay"></div>
+    <div class="container-fluid container-xxl demo-hero-content">
+      <p class="eyebrow light">SMALL BATCH · FRESH ROASTED</p>
+      <h1>Better coffee.<br><em>Slower mornings.</em></h1>
+      <p class="hero-copy">Thoughtfully sourced specialty coffee roasted to make the everyday ritual feel anything but
+        ordinary.</p>
+      <a class="premium-btn light-btn" href="#coffee"><span>Shop the collection</span><i
+          class="bi bi-arrow-right"></i></a>
+    </div>
+    <div class="hero-scroll">SCROLL <span></span></div>
+  </section>
+
+  <main id="top">
+    <section class="editorial-intro section-pad" id="story">
+      <div class="container-fluid container-xxl position-relative">
+        <div class="section-number reveal">01</div>
+        <p class="eyebrow reveal">COFFEE, REIMAGINED</p>
+        <div class="intro-grid">
+          <h2 class="display-editorial reveal">More than a cup.<br>A ritual worth<br><em>slowing down for.</em></h2>
+          <div class="intro-aside reveal delay-1">
+            <p>We source expressive coffees from remarkable places and roast them with enough restraint to let origin,
+              season and craft speak for themselves.</p>
+            <div class="round-badge"><span>ROASTED WITH<br>INTENTION</span><i class="bi bi-arrow-down"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-mosaic section-pad" id="journey">
+      <div class="container-fluid container-xxl">
+        <div class="story-layout">
+          <div class="story-copy reveal">
+            <p class="eyebrow">THE JOURNEY</p>
+            <h2>From origin<br><em>to obsession.</em></h2>
+            <p class="lead-copy">Every lot is chosen for clarity, sweetness and a point of view. Then we roast in small
+              batches and taste relentlessly.</p>
+            <div class="story-steps">
+              <div><span>01</span>
+                <p>Carefully sourced</p>
+              </div>
+              <div><span>02</span>
+                <p>Small-batch roasted</p>
+              </div>
+              <div><span>03</span>
+                <p>Crafted for character</p>
+              </div>
+            </div>
+          </div>
+          <div class="mosaic reveal delay-1">
+            <figure class="mosaic-a parallax-img"><img
+                src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?auto=format&fit=crop&w=1000&q=85"
+                alt="Coffee growing landscape" loading="lazy"></figure>
+            <figure class="mosaic-b parallax-img"><img
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85"
+                alt="Freshly roasted coffee beans" loading="lazy"></figure>
+            <figure class="mosaic-c parallax-img"><img
+                src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=85"
+                alt="Espresso extraction" loading="lazy"></figure>
+            <figure class="mosaic-d parallax-img"><img
+                src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=85"
+                alt="Coffee on a quiet morning" loading="lazy"></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection section-pad" id="coffee">
+      <div class="container-fluid container-xxl">
+        <div
+          class="section-head d-flex flex-column flex-lg-row align-items-lg-end justify-content-between gap-4 reveal">
+          <div>
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2>Find your roast.</h2>
+          </div>
+          <p>Different mornings call for different coffee.</p>
+        </div>
+        <div class="product-scroller" aria-label="Featured coffees">
+          <article class="product-card reveal">
+            <div class="product-visual tone-1"><span class="product-no">01</span><img
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85"
+                alt="Midnight No. 01 dark roast coffee" loading="lazy"><button class="quick-add"
+                data-product="Midnight No. 01" aria-label="Add Midnight No. 01 to cart"><i
+                  class="bi bi-plus"></i></button></div>
+            <div class="product-meta">
+              <div>
+                <p>DARK ROAST · ESPRESSO</p>
+                <h3>Midnight No. 01</h3><span>Dark chocolate · walnut · molasses</span>
+              </div><strong>$18</strong>
+            </div>
+          </article>
+          <article class="product-card stagger reveal delay-1">
+            <div class="product-visual tone-2"><span class="product-no">02</span><img
+                src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=900&q=85"
+                alt="Golden Hour medium roast coffee" loading="lazy"><button class="quick-add"
+                data-product="Golden Hour" aria-label="Add Golden Hour to cart"><i class="bi bi-plus"></i></button>
+            </div>
+            <div class="product-meta">
+              <div>
+                <p>MEDIUM ROAST · FILTER</p>
+                <h3>Golden Hour</h3><span>Caramel · stone fruit · cacao</span>
+              </div><strong>$20</strong>
+            </div>
+          </article>
+          <article class="product-card reveal delay-2">
+            <div class="product-visual tone-3"><span class="product-no">03</span><img
+                src="https://images.unsplash.com/photo-1461988091159-192b6df7054f?auto=format&fit=crop&w=900&q=85"
+                alt="Altitude Reserve specialty coffee" loading="lazy"><button class="quick-add"
+                data-product="Altitude Reserve" aria-label="Add Altitude Reserve to cart"><i
+                  class="bi bi-plus"></i></button></div>
+            <div class="product-meta">
+              <div>
+                <p>LIGHT ROAST · POUR OVER</p>
+                <h3>Altitude Reserve</h3><span>Jasmine · berry · bergamot</span>
+              </div><strong>$24</strong>
+            </div>
+          </article>
+          <article class="product-card stagger reveal delay-3">
+            <div class="product-visual tone-4"><span class="product-no">04</span><img
+                src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?auto=format&fit=crop&w=900&q=85"
+                alt="Slow Sunday balanced coffee" loading="lazy"><button class="quick-add" data-product="Slow Sunday"
+                aria-label="Add Slow Sunday to cart"><i class="bi bi-plus"></i></button></div>
+            <div class="product-meta">
+              <div>
+                <p>OMNI ROAST · EASY</p>
+                <h3>Slow Sunday</h3><span>Honey · almond · cocoa nib</span>
+              </div><strong>$19</strong>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" aria-label="Coffee philosophy" style="display: none;">
+      <div class="philosophy-lines" id="philosophyText"><span>GOOD COFFEE</span><span>SHOULD MAKE</span><span>YOU
+          FEEL</span><span><em>SOMETHING.</em></span></div>
+      <figure class="philosophy-image parallax-img"><img
+          src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1000&q=85"
+          alt="Coffee being poured into a cup" loading="lazy"></figure>
+      <div class="philosophy-line line-a"></div>
+      <div class="philosophy-line line-b"></div>
+    </section>
+
+    <section class="brew-guide section-pad" id="brew-guide">
+      <div class="container-fluid container-xxl">
+        <div class="section-head reveal">
+          <p class="eyebrow">BREW BETTER</p>
+          <h2>How do you take<br><em>your coffee?</em></h2>
+        </div>
+        <div class="brew-shell reveal delay-1">
+          <div class="brew-visual"><img id="brewImage"
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1300&q=86"
+              alt="Espresso brewing method" loading="lazy"><span id="brewIndex">01</span>
+            <p id="brewCaption">ESPRESSO</p>
+          </div>
+          <div class="brew-panel">
+            <div class="brew-tabs" role="tablist" aria-label="Brew methods">
+              <button class="brew-tab active" data-method="espresso" role="tab">Espresso <span>01</span></button>
+              <button class="brew-tab" data-method="pour" role="tab">Pour Over <span>02</span></button>
+              <button class="brew-tab" data-method="press" role="tab">French Press <span>03</span></button>
+              <button class="brew-tab" data-method="cold" role="tab">Cold Brew <span>04</span></button>
+            </div>
+            <div class="brew-details" id="brewDetails">
+              <h3 id="brewTitle">Espresso</h3>
+              <p id="brewDescription">Concentrated, syrupy and aromatic. Dial in fine and let pressure reveal the
+                coffee's sweetest core.</p>
+              <div class="brew-specs">
+                <div><span>TIME</span><strong id="brewTime">25–30 sec</strong></div>
+                <div><span>GRIND</span><strong id="brewGrind">Fine</strong></div>
+                <div><span>COFFEE</span><strong id="brewCoffee">18 g</strong></div>
+                <div><span>WATER</span><strong id="brewWater">93°C</strong></div>
+              </div>
+              <div class="taste-row"><span>TASTE PROFILE</span>
+                <p id="brewTaste">Rich · sweet · concentrated</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience-banner reveal">
+      <img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=2000&q=86"
+        alt="Moody specialty coffee bar interior" loading="lazy">
+      <div class="experience-overlay"></div>
+      <div class="container-fluid container-xxl experience-content">
+        <p class="eyebrow light">THE EVERYDAY RITUAL</p>
+        <h2 class="text-white">Not just coffee.<br><em>A better beginning.</em></h2><a href="#coffee"
+          class="premium-btn magnetic"><span>Explore the collection</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <section class="flavor section-pad">
+      <div class="container-fluid container-xxl">
+        <div class="section-head reveal">
+          <p class="eyebrow">TASTING ROOM</p>
+          <h2>Find your flavor.</h2>
+        </div>
+        <div class="flavor-grid reveal delay-1">
+          <div class="flavor-list" role="tablist" aria-label="Flavor profiles">
+            <button class="flavor-btn active" data-flavor="chocolate">CHOCOLATE <span>01</span></button>
+            <button class="flavor-btn" data-flavor="nutty">NUTTY <span>02</span></button>
+            <button class="flavor-btn" data-flavor="caramel">CARAMEL <span>03</span></button>
+            <button class="flavor-btn" data-flavor="fruity">FRUITY <span>04</span></button>
+            <button class="flavor-btn" data-flavor="floral">FLORAL <span>05</span></button>
+          </div>
+          <div class="flavor-content">
+            <div class="flavor-copy">
+              <p id="flavorDescription">Deep cocoa notes with a smooth toasted finish.</p><span>RECOMMENDED</span>
+              <h3 id="flavorProduct">Midnight No. 01</h3>
+              <div class="intensity"><span>INTENSITY</span>
+                <div class="meter"><i id="flavorMeter" style="width:88%"></i></div><strong id="flavorValue">8.8</strong>
+              </div>
+            </div>
+            <div class="flavor-image"><img id="flavorImage"
+                src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85"
+                alt="Coffee beans representing chocolate flavor notes" loading="lazy"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-section" id="journal">
+      <div class="values-sticky">
+        <div class="container-fluid container-xxl values-title">
+          <p class="eyebrow light">WHAT MATTERS</p>
+          <h2>Made with<br><em>more intention.</em></h2>
+        </div>
+        <div class="values-track" id="valuesTrack">
+          <article><span>01 / TRACEABLE</span>
+            <h3>We know where every bean begins.</h3>
+            <p>Transparent sourcing from producers and partners we trust.</p>
+          </article>
+          <article><span>02 / SMALL BATCH</span>
+            <h3>Roasted slowly. Never rushed.</h3>
+            <p>Small roast sizes give us the control to protect sweetness and clarity.</p>
+          </article>
+          <article><span>03 / FRESH</span>
+            <h3>Fresh enough to taste the difference.</h3>
+            <p>Weekly roasting keeps every bag expressive, aromatic and alive.</p>
+          </article>
+          <article><span>04 / INTENTIONAL</span>
+            <h3>Less noise. Better coffee.</h3>
+            <p>Thoughtful choices from farm to cup, without unnecessary complexity.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats section-pad">
+      <div class="container-fluid container-xxl">
+        <div class="stats-grid reveal">
+          <div><strong class="counter" data-target="18">0</strong><span>Coffee origins</span></div>
+          <div><strong class="counter" data-target="12" data-suffix="K+">0</strong><span>Cups enjoyed</span></div>
+          <div><strong class="counter" data-target="48" data-suffix="HR">0</strong><span>Fresh roast window</span></div>
+          <div><strong class="counter" data-target="100" data-suffix="%">0</strong><span>Traceable sourcing</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery section-pad">
+      <div class="container-fluid container-xxl">
+        <div class="section-head d-flex flex-column flex-md-row justify-content-between align-items-md-end reveal">
+          <div>
+            <p class="eyebrow">THE COFFEE LIFE</p>
+            <h2>Scenes from<br><em>the ritual.</em></h2>
+          </div>
+          <p>Take it slow. Make it well.</p>
+        </div>
+        <div class="gallery-grid reveal delay-1">
+          <figure class="g1"><img
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=84"
+              alt="Morning coffee" loading="lazy"></figure>
+          <figure class="g2"><img
+              src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=84"
+              alt="Coffee shop interior" loading="lazy"></figure>
+          <figure class="g3"><img
+              src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=900&q=84"
+              alt="Espresso detail" loading="lazy"></figure>
+          <figure class="g4"><img
+              src="https://images.unsplash.com/photo-1511081692775-05d0f180a065?auto=format&fit=crop&w=900&q=84"
+              alt="Milk being poured into coffee" loading="lazy"></figure>
+          <figure class="g5"><img
+              src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=84"
+              alt="Roasted coffee beans" loading="lazy"></figure>
+          <figure class="g6"><img
+              src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=900&q=84"
+              alt="Person enjoying a coffee" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section-pad">
+      <div class="container-fluid container-xxl testimonial-shell reveal">
+        <div class="quote-mark">“</div>
+        <p class="eyebrow">NOTES FROM OUR PEOPLE</p>
+        <div class="testimonial-stage">
+          <button class="testimonial-arrow" id="testimonialPrev" aria-label="Previous testimonial"><i
+              class="bi bi-arrow-left"></i></button>
+          <div class="testimonial-content">
+            <blockquote id="testimonialQuote">“Finally, coffee that tastes as intentional as the packaging looks.”
+            </blockquote>
+            <div class="customer"><img id="testimonialImage"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80"
+                alt="Portrait of Maya" loading="lazy">
+              <div><strong id="testimonialName">Maya Chen</strong><span id="testimonialMeta">Brooklyn, NY · Golden
+                  Hour</span></div>
+            </div>
+          </div>
+          <button class="testimonial-arrow" id="testimonialNext" aria-label="Next testimonial"><i
+              class="bi bi-arrow-right"></i></button>
+        </div>
+        <div class="testimonial-progress"><span id="testimonialCurrent">01</span><i><b
+              id="testimonialBar"></b></i><span>03</span></div>
+      </div>
+    </section>
+
+    <section class="subscription section-pad">
+      <img class="subscription-bg"
+        src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1800&q=85"
+        alt="Coffee beans and cup" loading="lazy">
+      <div class="subscription-overlay"></div>
+      <div class="container-fluid container-xxl subscription-inner reveal">
+        <p class="eyebrow light">COFFEE ON REPEAT</p>
+        <h2 class="text-white">Never run out<br><em>of good coffee.</em></h2>
+        <p>Freshly roasted coffee delivered on your schedule.</p>
+        <div class="frequency" role="radiogroup" aria-label="Delivery frequency"><button class="frequency-btn"
+            data-frequency="Every Week">Every week</button><button class="frequency-btn active"
+            data-frequency="Every 2 Weeks">Every 2 weeks</button><button class="frequency-btn"
+            data-frequency="Every Month">Every month</button></div>
+        <button class="premium-btn" id="subscribeBtn"><span>Subscribe — Every 2 Weeks</span><i
+            class="bi bi-arrow-right"></i></button>
+      </div>
+    </section>
+
+    <section class="social-strip section-pad-sm">
+      <div class="container-fluid container-xxl social-head reveal">
+        <div>
+          <p class="eyebrow">FOLLOW ALONG</p>
+          <h2>Made for slow mornings.</h2>
+        </div><a href="#">@noircoffee</a>
+      </div>
+      <div class="social-scroller reveal delay-1">
+        <a href="#" aria-label="Instagram post"><img
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=620&q=82"
+            alt="Coffee cup"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Instagram post"><img
+            src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=620&q=82"
+            alt="Espresso"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Instagram post"><img
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=620&q=82"
+            alt="Coffee beans"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Instagram post"><img
+            src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=620&q=82"
+            alt="Cafe"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="Instagram post"><img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=620&q=82"
+            alt="Coffee and beans"><i class="bi bi-instagram"></i></a>
+      </div>
+    </section>
+
+    <section class="newsletter section-pad">
+      <div class="container-fluid container-xxl newsletter-inner reveal">
+        <div>
+          <p class="eyebrow">NOTES FROM THE ROASTERY</p>
+          <h2>Stay for another cup.</h2>
+          <p>New coffees, brewing notes, stories and occasional surprises.</p>
+        </div>
+        <form id="newsletterForm" novalidate><label class="visually-hidden" for="newsletterEmail">Email
+            address</label><input id="newsletterEmail" type="email" placeholder="Your email address" required><button
+            type="submit">Join the list <i class="bi bi-arrow-right"></i></button><small id="newsletterMessage"
+            aria-live="polite"></small></form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container-fluid container-xxl">
+      <div class="footer-top">
+        <div class="footer-brand"><a class="brand brand-footer" href="#">CAFFÉORA</a>
+          <h2 class="text-white">Coffee for<br><em>better mornings.</em></h2>
+        </div>
+        <div class="footer-links">
+          <div><span>SHOP</span><a href="#coffee">All Coffee</a><a href="#coffee">Best Sellers</a><a
+              href="#">Subscriptions</a><a href="#">Equipment</a></div>
+          <div><span>ABOUT</span><a href="#story">Our Story</a><a href="#journey">Sourcing</a><a
+              href="#journal">Journal</a><a href="#">Contact</a></div>
+        </div>
+        <div class="footer-note"><span>ROASTERY</span>
+          <p>142 Mercer Street<br>Brooklyn, NY 11201</p>
+          <p>Mon–Sat · 8am–5pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div><a href="#">Instagram</a><a href="#">Pinterest</a><a href="#">YouTube</a></div>
+        <div><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Shipping</a></div>
+        <p>© <span id="year"></span> CAFFÉORA</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gsap.min.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <script>
+    const SCENES = [
+      { kicker: 'CAFFÉORA — Herbal Infusion', h: ['Brewed', 'in @gold.'], hero: true, align: 'center', body: 'A single leaf. A quiet ritual. Watch nature unfold into a cup of pure, golden calm.', cta: true, label: 'THE RITUAL' },
+      { kicker: '01 — The Bloom', h: ['Nature,', 'unwrapped.'], body: 'Chamomile, cinnamon, ginger, mint and cardamom — released in slow motion, suspended in light.', align: 'right', label: 'FLORAL' },
+      { kicker: '02 — The Descent', h: ['Into the', '@glass.'], body: 'Each ingredient drifts down through crystal-clear water, waiting quietly to awaken.', label: 'STEEP' },
+      { kicker: '03 — The Awakening', h: ['The water', 'stirs.'], body: 'Heat rises. Tiny bubbles bloom. The herbs swirl and begin to give their soul to the water.', align: 'right', label: 'INFUSE · 80°' },
+      { kicker: '04 — Golden Amber', h: ['A colour', 'of @gold.'], body: 'Clarity turns to warmth. Light pours through liquid amber, alive with colour and movement.', label: 'AMBER' },
+      { kicker: '05 — The Pour', h: ['Poured,', 'slowly.'], body: 'A ribbon of gold falls into the glass — elegant, unhurried, and absolutely perfect.', align: 'right', label: 'POUR' },
+      { kicker: '06 — The Ritual', h: ['Your moment', 'of @calm.'], body: 'Freshly brewed, wrapped in steam and warm light. This is CAFFÉORA — the art of slowing down.', align: 'center', cta2: true, label: 'SERVE' },
+    ];
+
+    const main = document.getElementById('top');
+    const splitWords = (lines) =>
+      lines.map((l) => {
+        const parts = l.split(' ').map((w) => {
+          const g = w.charAt(0) === '@'; const txt = g ? w.slice(1) : w;
+          return `<span class="word${g ? ' gold' : ''}">${txt}</span>`;
+        }).join(' ');
+        return `<span class="line" style="display:block">${parts}</span>`;
+      }).join('');
+
+    const sceneFragment = document.createDocumentFragment();
+    SCENES.forEach((s, i) => {
+      const sec = document.createElement('section');
+      sec.className = 'scene' + (s.align === 'right' ? ' right' : '') + (s.align === 'center' ? ' center' : '');
+      sec.id = 's' + (i + 1);
+      const hClass = s.hero ? 'hero-h' : 'scene-h';
+      sec.innerHTML = `
+          <div class="shell"><div class="col">
+            <span class="kicker">${s.kicker}</span>
+            <h1 class="${hClass}" data-h>${splitWords(s.h)}</h1>
+            <p class="body" data-r>${s.body}</p>
+            ${s.cta ? '<a href="#s2" class="btn" data-r>Discover the ritual ↓</a>' : ''}
+            ${s.cta2 ? '<div data-r><a href="#" class="btn">Order the collection ↗</a> <a href="#top" class="btn ghost">Watch again</a></div>' : ''}
+            ${s.hero ? '<div class="body" data-r style="margin-top:32px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)">Scroll to brew ↓</div>' : ''}
+          </div></div>`;
+      sceneFragment.appendChild(sec);
+    });
+    main.prepend(sceneFragment);
+  </script>
+  <script>
+    const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+    const range = (p, a, b) => clamp((p - a) / (b - a));
+
+    const VID = document.getElementById('brew');
+    const pre = document.getElementById('pre');
+    const preFill = document.getElementById('pre-fill');
+    const prePct = document.getElementById('pre-pct');
+    let started = false;
+    function setPct(p) { p = Math.max(0, Math.min(100, Math.round(p))); preFill.style.width = p + '%'; prePct.textContent = (p < 100 ? 'WARMING THE WATER · ' : 'READY · ') + p + '%'; }
+    function go() { if (started) return; started = true; setPct(100); VID.classList.add('ready'); VID.play().catch(() => { }); setTimeout(init, 260); }
+    const pollBuf = setInterval(() => {
+      let p = 0;
+      try { if (VID.duration && VID.buffered.length) p = (VID.buffered.end(VID.buffered.length - 1) / VID.duration) * 100; } catch (e) { }
+      setPct(Math.max(p, VID.readyState >= 3 ? 100 : p * 0.95));
+      if (VID.readyState >= 4) { clearInterval(pollBuf); go(); }
+    }, 120);
+    VID.addEventListener('canplaythrough', () => { clearInterval(pollBuf); go(); }, { once: true });
+    setTimeout(() => { clearInterval(pollBuf); go(); }, 8000);
+    VID.load();
+
+    /* warm steam + spice motes */
+    const fx = document.getElementById('fx');
+    const fxc = fx.getContext('2d');
+    let brewP = 0;
+    let motes = [];
+    // pre-render soft glow sprites once → cheap drawImage per particle (no
+    // per-frame radial gradients = far less CPU, no scroll hang).
+    function makeSprite(rgb) {
+      const s = document.createElement('canvas'); s.width = s.height = 64;
+      const c = s.getContext('2d'); const g = c.createRadialGradient(32, 32, 0, 32, 32, 32);
+      g.addColorStop(0, 'rgba(' + rgb + ',1)'); g.addColorStop(1, 'rgba(' + rgb + ',0)');
+      c.fillStyle = g; c.fillRect(0, 0, 64, 64); return s;
+    }
+    const sprCream = makeSprite('243,226,190');
+    const sprGold = makeSprite('217,169,85');
+    function mk(seed) {
+      return {
+        x: Math.random() * fx.width, y: seed ? Math.random() * fx.height : fx.height * (0.9 + Math.random() * 0.2),
+        r: Math.random() * 2.4 + 0.6, vy: -(0.12 + Math.random() * 0.5), vx: (Math.random() - 0.5) * 0.25,
+        a: 0.05 + Math.random() * 0.12, s: Math.random() * 6.28, gold: Math.random() < 0.22
+      };
+    }
+    function sizeFx() {
+      fx.width = innerWidth; fx.height = innerHeight;
+      motes = Array.from({ length: 36 }, () => mk(true));
+    }
+    sizeFx();
+
+    let prog = 0; const ease = { p: 0 };
+    const navEl = document.getElementById('nav'); const bar = document.getElementById('progress');
+    const hudLabel = document.getElementById('hud-label'); const warm = document.getElementById('warm');
+
+    function init() {
+      pre.classList.add('done');
+      const g = window.gsap; g.registerPlugin(window.ScrollTrigger);
+      window.ScrollTrigger.create({ trigger: document.body, start: 'top top', end: 'bottom bottom', onUpdate: (s) => (prog = s.progress) });
+      document.querySelectorAll('section.scene').forEach((sec) => {
+        const words = sec.querySelectorAll('[data-h] .word');
+        const rest = sec.querySelectorAll('[data-r]');
+        const col = sec.querySelector('.col');
+        g.set([...words, ...rest], { opacity: 0, y: 28 });
+        window.ScrollTrigger.create({
+          trigger: sec, start: 'top 76%', once: true, onEnter: () => {
+            g.to(words, { opacity: 1, y: 0, duration: 1.0, stagger: 0.05, ease: 'power3.out' });
+            g.to(rest, { opacity: 1, y: 0, duration: 1.0, stagger: 0.09, delay: 0.2, ease: 'power3.out' });
+          }
+        });
+        window.ScrollTrigger.create({
+          trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true, onUpdate: (s) => {
+            const d = Math.abs(s.progress - 0.5) * 2; col.style.opacity = clamp(1.28 - d * 2.55).toFixed(3);
+          }
+        });
+      });
+      requestAnimationFrame(render);
+      requestAnimationFrame(fxLoop);
+      addEventListener('resize', () => { sizeFx(); window.ScrollTrigger.refresh(); });
+    }
+
+    function render(now) {
+      ease.p += (prog - ease.p) * 0.1; const p = ease.p; brewP = p;
+      // warm golden bloom intensifies as the tea turns amber → pour
+      warm.style.opacity = (range(p, 0.45, 0.7) * 0.85).toFixed(3);
+      bar.style.transform = `scaleX(${p})`;
+      navEl.classList.toggle('solid', scrollY > 40);
+      const si = Math.min(SCENES.length - 1, Math.round(p * (SCENES.length - 1)));
+      hudLabel.textContent = SCENES[si].label;
+      requestAnimationFrame(render);
+    }
+
+    function fxLoop(t) {
+      fxc.clearRect(0, 0, fx.width, fx.height);
+      // steam denser during brew → pour
+      const dens = 0.4 + range(brewP, 0.3, 0.75) * 0.6;
+      for (const m of motes) {
+        m.y += m.vy; m.x += m.vx + Math.sin(t * 0.0004 + m.s) * 0.25;
+        if (m.y + m.r < -6) { Object.assign(m, mk(false)); }
+        const vFade = clamp((m.y / fx.height - 0.05) / 0.3) * clamp((1.05 - m.y / fx.height) / 0.3);
+        const a = m.a * dens * vFade;
+        if (a <= 0.003) continue;
+        const r = m.r * 4;
+        fxc.globalAlpha = a;
+        fxc.drawImage(m.gold ? sprGold : sprCream, m.x - r, m.y - r, r * 2, r * 2);
+      }
+      fxc.globalAlpha = 1;
+      requestAnimationFrame(fxLoop);
+    }
+  </script>
+</body>
+
+</html>
