@@ -1442,7 +1442,7 @@ h2 em {
 }
 
 .footer-brand h2 {
-  font: 500 clamp(3.5rem, 5vw, 5.8rem)/.85 var(--serif);
+  font: 500 clamp(3.5rem, 4vw, 5.8rem)/.85 var(--serif);
   letter-spacing: -.045em
 }
 
@@ -1462,14 +1462,14 @@ h2 em {
 .footer-links span,
 .footer-note>span {
   font-size: .58rem;
-  letter-spacing: .16em;
+  letter-spacing: 1rem;
   color: rgba(255, 255, 255, .45);
   margin-bottom: 14px
 }
 
 .footer-links a,
 .footer-note p {
-  font-size: .78rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, .78)
 }
 
@@ -1483,7 +1483,7 @@ h2 em {
   display: grid;
   grid-template-columns: 1fr 1fr auto;
   gap: 30px;
-  font-size: .63rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, .5)
 }
 
