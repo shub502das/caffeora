@@ -40,10 +40,10 @@
 
   // Brew explorer
   const brewData = {
-    espresso:{index:'01', title:'Espresso', caption:'ESPRESSO', image:'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1300&q=86', desc:"Concentrated, syrupy and aromatic. Dial in fine and let pressure reveal the coffee's sweetest core.", time:'25–30 sec', grind:'Fine', coffee:'18 g', water:'93°C', taste:'Rich · sweet · concentrated'},
-    pour:{index:'02', title:'Pour Over', caption:'POUR OVER', image:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1300&q=86', desc:'Clean, bright and articulate. A slow controlled pour gives delicate aromatics room to open.', time:'2:45–3:30', grind:'Medium', coffee:'20 g', water:'94°C', taste:'Clean · bright · layered'},
-    press:{index:'03', title:'French Press', caption:'FRENCH PRESS', image:'https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1300&q=86', desc:'Full-bodied and comforting. A longer immersion brings out rounded sweetness and texture.', time:'4 min', grind:'Coarse', coffee:'30 g', water:'93°C', taste:'Round · rich · comforting'},
-    cold:{index:'04', title:'Cold Brew', caption:'COLD BREW', image:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=1300&q=86', desc:'Silky, mellow and low in perceived acidity. Brew it slow and serve it colder than your plans.', time:'12–16 hr', grind:'Coarse', coffee:'80 g', water:'Cold', taste:'Smooth · cocoa · mellow'}
+    espresso:{index:'01', title:'Espresso', caption:'ESPRESSO', image:'../images/brewing/espresso.jpg', desc:"Concentrated, syrupy and aromatic. Dial in fine and let pressure reveal the coffee's sweetest core.", time:'25–30 sec', grind:'Fine', coffee:'18 g', water:'93°C', taste:'Rich · sweet · concentrated'},
+    pour:{index:'02', title:'Pour Over', caption:'POUR OVER', image:'../images/story/hero-cup.jpg', desc:'Clean, bright and articulate. A slow controlled pour gives delicate aromatics room to open.', time:'2:45–3:30', grind:'Medium', coffee:'20 g', water:'94°C', taste:'Clean · bright · layered'},
+    press:{index:'03', title:'French Press', caption:'FRENCH PRESS', image:'../images/brewing/french-press.jpg', desc:'Full-bodied and comforting. A longer immersion brings out rounded sweetness and texture.', time:'4 min', grind:'Coarse', coffee:'30 g', water:'93°C', taste:'Round · rich · comforting'},
+    cold:{index:'04', title:'Cold Brew', caption:'COLD BREW', image:'../images/brewing/cold-brew.jpg', desc:'Silky, mellow and low in perceived acidity. Brew it slow and serve it colder than your plans.', time:'12–16 hr', grind:'Coarse', coffee:'80 g', water:'Cold', taste:'Smooth · cocoa · mellow'}
   };
   const brewVisual = $('.brew-visual'); const brewDetails = $('#brewDetails');
   $$('.brew-tab').forEach(btn => btn.addEventListener('click', () => {
@@ -61,11 +61,11 @@
 
   // Flavor explorer
   const flavorData = {
-    chocolate:{desc:'Deep cocoa notes with a smooth toasted finish.', product:'Midnight No. 01', value:'8.8', width:'88%', image:'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=900&q=85'},
-    nutty:{desc:'Roasted almond, praline and a quietly creamy finish.', product:'Slow Sunday', value:'7.4', width:'74%', image:'https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&w=900&q=85'},
-    caramel:{desc:'Burnt sugar sweetness with a silky, golden finish.', product:'Golden Hour', value:'8.1', width:'81%', image:'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=85'},
-    fruity:{desc:'Ripe berry brightness layered with juicy stone fruit.', product:'Altitude Reserve', value:'7.8', width:'78%', image:'https://images.unsplash.com/photo-1461988091159-192b6df7054f?auto=format&fit=crop&w=900&q=85'},
-    floral:{desc:'Jasmine-like aromatics with a tea-like, elegant finish.', product:'Altitude Reserve', value:'6.9', width:'69%', image:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85'}
+    chocolate:{desc:'Deep cocoa notes with a smooth toasted finish.', product:'Midnight No. 01', value:'8.8', width:'88%', image:'../images/products/coffee-beans.jpg'},
+    nutty:{desc:'Roasted almond, praline and a quietly creamy finish.', product:'Slow Sunday', value:'7.4', width:'74%', image:'../images/products/golden-hour.jpg'},
+    caramel:{desc:'Burnt sugar sweetness with a silky, golden finish.', product:'Golden Hour', value:'8.1', width:'81%', image:'../images/gallery/morning-cup.jpg'},
+    fruity:{desc:'Ripe berry brightness layered with juicy stone fruit.', product:'Altitude Reserve', value:'7.8', width:'78%', image:'../images/products/altitude-reserve.jpg'},
+    floral:{desc:'Jasmine-like aromatics with a tea-like, elegant finish.', product:'Altitude Reserve', value:'6.9', width:'69%', image:'../images/story/hero-cup.jpg'}
   };
   const flavorImageWrap = $('.flavor-image');
   $$('.flavor-btn').forEach(btn => btn.addEventListener('click', () => {
@@ -76,9 +76,9 @@
 
   // Testimonials
   const testimonials=[
-    {q:'“Finally, coffee that tastes as intentional as the packaging looks.”',name:'Maya Chen',meta:'Brooklyn, NY · Golden Hour',img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80'},
-    {q:'“The Altitude Reserve is bright, elegant and impossible not to brew twice.”',name:'Julian Reed',meta:'Austin, TX · Altitude Reserve',img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80'},
-    {q:'“Slow Sunday turned our kitchen into the best coffee shop in the neighborhood.”',name:'Elena Rossi',meta:'Chicago, IL · Slow Sunday',img:'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=240&q=80'}
+    {q:'“Finally, coffee that tastes as intentional as the packaging looks.”',name:'Maya Chen',meta:'Brooklyn, NY · Golden Hour',img:'../images/testimonials/maya.jpg'},
+    {q:'“The Altitude Reserve is bright, elegant and impossible not to brew twice.”',name:'Julian Reed',meta:'Austin, TX · Altitude Reserve',img:'../images/testimonials/julian.jpg'},
+    {q:'“Slow Sunday turned our kitchen into the best coffee shop in the neighborhood.”',name:'Elena Rossi',meta:'Chicago, IL · Slow Sunday',img:'../images/testimonials/elena.jpg'}
   ];
   let ti=0; const tContent=$('.testimonial-content');
   function setTestimonial(next){ ti=(next+testimonials.length)%testimonials.length; const t=testimonials[ti]; tContent.classList.add('changing'); setTimeout(()=>{ $('#testimonialQuote').textContent=t.q; $('#testimonialName').textContent=t.name; $('#testimonialMeta').textContent=t.meta; $('#testimonialImage').src=t.img; $('#testimonialCurrent').textContent=String(ti+1).padStart(2,'0'); $('#testimonialBar').style.width=`${((ti+1)/testimonials.length)*100}%`; tContent.classList.remove('changing'); },180); }
