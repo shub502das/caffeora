@@ -325,13 +325,13 @@
       .navlinks a {
           font-size: 1rem;
           letter-spacing: 0.06em;
-          color: var(--muted);
+          color: #fff;
           text-decoration: none;
           transition: color 0.3s;
       }
 
       .navlinks a:hover {
-          color: var(--ink);
+          color: var(--gold2);
       }
 
       .nav-cta {
