@@ -964,8 +964,10 @@ h2 em {
 }
 
 .flavor-image {
-  height: 520px;
-  overflow: hidden
+    height: 520px;
+    overflow: hidden;
+    border: 8px solid #f6f1e9;
+    border-radius: 1rem;
 }
 
 .flavor-image img {
@@ -2513,6 +2515,7 @@ h2 em,
 .brew-visual {
   height: 590px;
   align-self: center;
+  border: 8px solid #f6f1e9;
 }
 
 .brew-visual img {
