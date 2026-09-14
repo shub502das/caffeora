@@ -301,7 +301,7 @@ h3 {
 }
 
 .display-editorial {
-  font: 500 clamp(4rem, 7vw, 8rem)/.88 var(--serif);
+  font: 500 clamp(4rem, 6vw, 8rem)/.88 var(--serif);
   letter-spacing: -.052em;
   margin: 0
 }
@@ -1461,7 +1461,7 @@ h2 em {
 
 .footer-links span,
 .footer-note>span {
-  font-size: .58rem;
+  font-size: 1rem;
   letter-spacing: 1rem;
   color: rgba(255, 255, 255, .45);
   margin-bottom: 14px
