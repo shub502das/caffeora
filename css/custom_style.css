@@ -524,7 +524,7 @@
           }
 
           .product-visual {
-              height: min(430px, 112vw);
+              height: auto;
           }
 
           .brew-visual,
